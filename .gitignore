@@ -10,8 +10,6 @@ bin-release/
 .vscode/
 node_modules/
 vendor/
-composer.lock
-package-lock.json
 
 # Executables
 *.swf
