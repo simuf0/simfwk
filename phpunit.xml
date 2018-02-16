@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/autoload.php"
+         colors="true"
+         verbose="true">
+    <testsuites>
+        <!-- <testsuite name="Controllers">
+            <directory>tests/SimFWKLib/Controllers</directory>
+        </testsuite>
+        <testsuite name="Core">
+            <directory>tests/SimFWKLib/Core</directory>
+        </testsuite>
+        <testsuite name="Factory">
+            <directory>tests/SimFWKLib/Factory</directory>
+        </testsuite> -->
+        <testsuite name="Wrappers">
+            <directory>tests/SimFWKLib/Wrappers</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
