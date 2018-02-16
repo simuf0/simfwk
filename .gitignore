@@ -7,6 +7,11 @@ bin-release/
 
 # Other files and folders
 .settings/
+.vscode/
+node_modules/
+vendor/
+composer.lock
+package-lock.json
 
 # Executables
 *.swf
