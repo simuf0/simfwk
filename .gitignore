@@ -9,7 +9,8 @@ bin-release/
 .settings/
 .vscode/
 node_modules/
-vendor/*.git
+vendor/
+composer.lock
 package-lock.json
 
 # Executables
