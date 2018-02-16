@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="tests/autoload.php"
-         colors="true"
+<phpunit colors="true"
          verbose="true">
     <testsuites>
-        <!-- <testsuite name="Controllers">
+        <testsuite name="Controllers">
             <directory>tests/SimFWKLib/Controllers</directory>
         </testsuite>
         <testsuite name="Core">
@@ -11,7 +10,19 @@
         </testsuite>
         <testsuite name="Factory">
             <directory>tests/SimFWKLib/Factory</directory>
-        </testsuite> -->
+        </testsuite>
+        <testsuite name="File">
+            <directory>tests/SimFWKLib/File</directory>
+        </testsuite>
+        <testsuite name="Http">
+            <directory>tests/SimFWKLib/Http</directory>
+        </testsuite>
+        <testsuite name="Utils">
+            <directory>tests/SimFWKLib/Utils</directory>
+        </testsuite>
+        <testsuite name="Views">
+            <directory>tests/SimFWKLib/Views</directory>
+        </testsuite>
         <testsuite name="Wrappers">
             <directory>tests/SimFWKLib/Wrappers</directory>
         </testsuite>
