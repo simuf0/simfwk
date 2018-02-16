@@ -1,0 +1,30 @@
+{
+  "name": "simfwk-core",
+  "version": "0.1.0",
+  "description": "SimFWK is a web-oriented framework. SimFWK used technologies like PHP 7, PHPUnit, Node.js, TypeScript, Sass and more... SimFWK is an open source-based application.",
+  "directories": {},
+  "devDependencies": {
+    "typescript": "latest",
+    "run-sequence": "latest",
+    "gulp": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-exec": "latest",
+    "gulp-phpunit": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-cssbeautify": "latest",
+    "gulp-csso": "latest",
+    "gulp-typescript": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simUf0/simfwk.git"
+  },
+  "author": "Simon Cabos",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/simUf0/simfwk/issues"
+  },
+  "homepage": "https://github.com/simUf0/simfwk#readme"
+}

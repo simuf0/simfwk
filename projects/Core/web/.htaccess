@@ -1,0 +1,92 @@
+AddDefaultCharset UTF-8
+Options -Indexes +FollowSymlinks
+
+AddType image/x-icon .ico
+AddType text/html .html .htm
+AddType text/css .css
+AddType text/javascript .js
+AddType application/xhtml+xml .xhtml
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault 								"access plus 7200 seconds"
+	ExpiresByType image/jpg 					"access plus 1 week"
+	ExpiresByType image/jpeg 					"access plus 1 week"
+	ExpiresByType image/png 					"access plus 1 week"
+	ExpiresByType image/gif 					"access plus 1 week"
+	ExpiresByType image/svg+xml					"access plus 1 week"
+	ExpiresByType image/ico 					"access plus 1 week"
+	ExpiresByType image/icon 					"access plus 1 week"
+	ExpiresByType image/x-icon 					"access plus 1 week"
+	ExpiresByType text/css 						"access plus 1 week"
+	ExpiresByType text/javascript 				"access plus 1 week"
+	ExpiresByType text/html 					"access plus 7200 seconds"
+	ExpiresByType application/xhtml+xml 		"access plus 7200 seconds"
+	ExpiresByType application/font-woff 		"access plus 1 week"
+	ExpiresByType application/font-woff2 		"access plus 1 week"
+	ExpiresByType application/javascript 		"access plus 1800 seconds"
+	ExpiresByType application/x-javascript 	    "access plus 1 week"
+	ExpiresByType application/x-shockwave-flash "access plus 1 week"
+</IfModule>
+
+<IfModule mod_headers.c>
+
+	<FilesMatch "\\.(ico|jpe?g|png|gif|swf|woff|woff2)$">
+	Header set Cache-Control "max-age=2592000, public"
+	</FilesMatch>
+
+	<FilesMatch "\\.(css)$">
+	Header set Cache-Control "max-age=604800, public"
+	</FilesMatch>
+
+	<FilesMatch "\\.(js)$">
+	Header set Cache-Control "max-age=604800, private"
+	</FilesMatch>
+
+	<FilesMatch "\\.(x?html?|php)$">
+	Header set Cache-Control "max-age=600, private, must-revalidate"
+	</FilesMatch>
+
+</IfModule>
+
+Header unset ETag
+FileETag none
+
+SetEnv ZEND_OPTIMIZER 1
+SetEnv SESSION_USE_TRANS_SID 0
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+<IfModule mod_filter.c>
+	SetOutputFilter DEFLATE
+	AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
+</IfModule>
+
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0678 no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+Header append Vary User-Agent env=!dont-vary
+
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+
+	# RewriteCond %{REQUEST_FILENAME} !webroot
+	# RewriteCond %{REQUEST_FILENAME} !.*\.php
+	# RewriteCond %{REQUEST_FILENAME} !ajax\.php
+	# RewriteRule ^(.*)\.(gif|png|jpe?g|css|js|swf|woff|woff2)$ webroot\/$1\.$2 [L]
+
+	RewriteCond %{REQUEST_FILENAME} !resources/
+	RewriteCond %{REQUEST_FILENAME} !scripts/(.*)\.js$
+	RewriteCond %{REQUEST_FILENAME} !styles/(.*)\.css$
+	RewriteCond %{REQUEST_FILENAME} !ajax\.php
+	RewriteRule ^(.*)$  index.php?$1 [L]
+
+</IfModule>

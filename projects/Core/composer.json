@@ -1,0 +1,33 @@
+{
+    "name": "simfwk/core",
+    "description": "SimFWK is a web-oriented framework. SimFWK used technologies like PHP 7, PHPUnit, Node.js, TypeScript, Sass and more... SimFWK is an open source-based application.",
+    "type": "library",
+    "require": {
+        "php": "^7.0",
+        "phpunit/phpunit": "^6.5",
+        "phpdocumentor/phpdocumentor": "^2.9"
+    },
+    "require-dev": {
+        "php": "^7.0",
+        "phpunit/phpunit": "^6.5",
+        "phpdocumentor/phpdocumentor": "^2.9"
+    },
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Simon Cabos",
+            "email": "cabos.simon.dev@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "SimFWK": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "Tests\\SimFWK": "tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}
