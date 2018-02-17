@@ -1,16 +1,16 @@
 <?php
 
-namespace Tests\SimFWKLib;
+namespace Tests\SimFWKLib\Core;
 
 use PHPUnit\Framework\TestCase;
 
-class AutoloaderTest extends TestCase
+class BootloaderTest extends TestCase
 {
     private $instance;
     
     public function setUp ()
     {
-        $this->instance = \SimFWKLib\Autoloader::getInstance();
+        $this->instance = \SimFWKLib\Bootloader::getInstance();
     }
     
     public function tearDown ()
@@ -33,20 +33,17 @@ class AutoloaderTest extends TestCase
         );
     }
 
-    public function testCanLoadClass ()
+    public function testCanLaunchApplication ()
     {
-        $class = "SimFWKLib\Bootloader";
-        $this->assertInstanceOf($class, $class::getInstance());
+        $this->instance->launch("core");
+        $this->assertContains($_SESSION, "app");
     }
 
     /**
-     * @expectedException SimFWKLib\AutoloaderException
+     * @expectedException SimFWKLib\BootloaderException
      */
-    public function testCannotLoadClass ()
+    public function testThrowExceptionIfCannotLoadApplication ()
     {
-        $r = new \ReflectionClass($this->instance);
-        $method = $r->getMethod("load");
-        $method->setAccessible(true);
-        $method->invoke($this->instance, "SimFWKLib\WrongClass");
+        $this->instance->launch("wrongApp");
     }
 }

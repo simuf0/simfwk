@@ -2,13 +2,13 @@
 <phpunit colors="true"
          verbose="true">
     <testsuites>
-        <testsuite name="Controllers">
+        <!-- <testsuite name="Controllers">
             <directory>tests/SimFWKLib/Controllers</directory>
-        </testsuite>
+        </testsuite> -->
         <testsuite name="Core">
             <directory>tests/SimFWKLib/Core</directory>
         </testsuite>
-        <testsuite name="Factory">
+        <!-- <testsuite name="Factory">
             <directory>tests/SimFWKLib/Factory</directory>
         </testsuite>
         <testsuite name="File">
@@ -22,7 +22,7 @@
         </testsuite>
         <testsuite name="Views">
             <directory>tests/SimFWKLib/Views</directory>
-        </testsuite>
+        </testsuite> -->
         <testsuite name="Wrappers">
             <directory>tests/SimFWKLib/Wrappers</directory>
         </testsuite>

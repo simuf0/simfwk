@@ -1,6 +1,6 @@
 <?php
 
-namespace SimFWKLib;
+namespace SimFWKLib\Core;
 
 /**
  * Bootloader class
