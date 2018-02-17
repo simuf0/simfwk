@@ -10,6 +10,7 @@ bin-release/
 .vscode/
 node_modules/
 vendor/
+projects/
 
 # Executables
 *.swf
