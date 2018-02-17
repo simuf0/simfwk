@@ -35,6 +35,8 @@ define("URI", [
 
 define("CORE", PATHS['src'] . DS . "Core");
 
-require_once PATHS['src'] . DS . "SimFWKLib" . DS ."Autoloader.php";
-SimFWKLib\Autoloader::getInstance();
+require_once dirname(dirname(dirname(dirname(CORE)))).DS."vendor".DS."autoload.php";
+
+// require_once PATHS['src'] . DS . "SimFWKLib" . DS ."Autoloader.php";
+// SimFWKLib\Autoloader::getInstance();
 SimFWKLib\Bootloader::getInstance()->launch("core");
