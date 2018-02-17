@@ -4,4 +4,4 @@ php:
 
 script:
    - composer install
-   - vendor/bin/phpunitg
+   - vendor/bin/phpunit
